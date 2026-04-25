@@ -52,6 +52,23 @@ def get_data():
         return jsonify(data)
     except Exception as e:
         return jsonify({"error": str(e)})
+    
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo():
+    try:
+        item_name = request.form["itemName"]
+        item_description = request.form["itemDescription"]
+
+        # Store in MongoDB (same collection or new one)
+        collection.insert_one({
+            "itemName": item_name,
+            "itemDescription": item_description
+        })
+
+        return "To-Do item submitted successfully"
+
+    except Exception as e:
+        return f"Error: {str(e)}"
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False)
