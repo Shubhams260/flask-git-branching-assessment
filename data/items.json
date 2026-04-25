@@ -1,10 +1,14 @@
 [
   {
-    "name": "Item1",
-    "price": 100
+    "name": "Laptop",
+    "price": 55000
   },
   {
-    "name": "Item2",
-    "price": 200
+    "name": "Keyboard",
+    "price": 1500
+  },
+  {
+    "name": "Mouse",
+    "price": 800
   }
 ]
